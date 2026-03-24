@@ -1489,3 +1489,201 @@ html {
         gap: var(--spacing-xs);
     }
 }
+
+/* ===================================
+   Privacy Policy Page
+   =================================== */
+
+.privacy-content {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-dark);
+}
+
+.privacy-article {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.privacy-article h2 {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--border-purple);
+}
+
+.privacy-article h2:first-child {
+    margin-top: 0;
+}
+
+.privacy-article h3 {
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.privacy-article p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.05rem;
+}
+
+.privacy-article ul,
+.privacy-article ol {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    margin-left: var(--spacing-lg);
+    font-size: 1.05rem;
+}
+
+.privacy-article li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.privacy-article strong {
+    color: var(--primary-purple);
+    font-weight: 600;
+}
+
+.privacy-article a {
+    color: var(--primary-purple);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.privacy-article a:hover {
+    color: var(--light-purple);
+}
+
+.privacy-article em {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Privacy Summary Box */
+.privacy-summary {
+    background: var(--bg-card);
+    border: 1px solid var(--border-purple);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+}
+
+.privacy-summary h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.summary-item {
+    text-align: center;
+    padding: var(--spacing-md);
+}
+
+.summary-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--primary-purple);
+    margin: 0 auto var(--spacing-md);
+}
+
+.summary-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+}
+
+.summary-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Table of Contents (Optional) */
+.privacy-toc {
+    background: var(--bg-card-hover);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.privacy-toc h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+.privacy-toc ul {
+    list-style: none;
+    margin: 0;
+}
+
+.privacy-toc li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.privacy-toc a {
+    color: var(--primary-purple);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+}
+
+.privacy-toc a:hover {
+    background: rgba(168, 85, 247, 0.1);
+    padding-left: var(--spacing-md);
+}
+
+/* Last Updated Badge */
+.last-updated {
+    display: inline-block;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid var(--border-purple);
+    color: var(--primary-purple);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .privacy-article {
+        padding: var(--spacing-lg);
+    }
+    
+    .privacy-article h2 {
+        font-size: 1.5rem;
+    }
+    
+    .privacy-article h3 {
+        font-size: 1.2rem;
+    }
+    
+    .privacy-article p,
+    .privacy-article ul,
+    .privacy-article ol {
+        font-size: 1rem;
+    }
+    
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
