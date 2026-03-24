@@ -2,7 +2,7 @@
 title: "Health Data Export - Export Health & Fitness Data from All Wearables"
 description: "Export your health data from Apple Health, Google Fit, Health Connect, Fitbit, Garmin, Samsung Health & all wearables. Privacy-focused health data export tool."
 url: "https://www.healthdataexport.com"
-baseurl: "/health-data-export-website"
+baseurl: ""
 
 # SEO Settings
 lang: en-US
