@@ -1,14 +1,13 @@
 /* TEAM */
-Developer: Your Name
-Site: https://yourdomain.com
+Developer: Teqxnology
+Site: https://www.healthdataexport.com
 Twitter: @healthdataexport
-Location: Your Location
 
 /* THANKS */
 Special thanks to the open-source community
 
 /* SITE */
-Last update: 2024-01-15
+Last update: 2026-03-23
 Language: English
 Doctype: HTML5
 IDE: Your preferred IDE
