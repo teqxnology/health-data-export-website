@@ -8,17 +8,17 @@ Beautiful Grafana-style website for Health Data Export app with purple undertone
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/YOUR-USERNAME/health-data-export-website.git
+git clone https://github.com/teqxnology/health-data-export-website.git
 cd health-data-export-website
 
 ## 🔍 SEO Optimization
 
 ### Pre-Launch Checklist
 
-- [ ] Update all instances of `yourdomain.com` with your actual GitHub Pages URL
-- [ ] Add your actual app store links when available
-- [ ] Create and add favicon.png, apple-touch-icon.png, og-image.png
-- [ ] Update sitemap.xml with your domain
+- [x] Update all instances of with your actual GitHub Pages URL
+- [x] Add your actual app store links when available
+- [x] Create and add favicon.png, apple-touch-icon.png, og-image.png
+- [x] Update sitemap.xml with your domain
 - [ ] Submit sitemap to Google Search Console
 - [ ] Submit sitemap to Bing Webmaster Tools
 - [ ] Add Google Analytics (optional)
