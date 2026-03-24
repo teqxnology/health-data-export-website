@@ -5,7 +5,7 @@ Disallow: /private/
 Disallow: /admin/
 
 # Sitemap Location (must be absolute URL)
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://www.healthdataexport.com/sitemap.xml
 
 # Crawl Delay
 Crawl-delay: 1
