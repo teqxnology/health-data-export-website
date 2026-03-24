@@ -1,0 +1,27 @@
+# GitHub Pages Configuration
+title: "Health Data Export - Export Health & Fitness Data from All Wearables"
+description: "Export your health data from Apple Health, Google Fit, Health Connect, Fitbit, Garmin, Samsung Health & all wearables. Privacy-focused health data export tool."
+url: "https://yourusername.github.io"
+baseurl: "/health-data-export-website"
+
+# SEO Settings
+lang: en-US
+author: Health Data Export Team
+twitter:
+  username: healthdataexport
+  card: summary_large_image
+social:
+  name: Health Data Export
+  links:
+    - https://twitter.com/healthdataexport
+    - https://facebook.com/healthdataexport
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - README.md
+  - .gitignore
