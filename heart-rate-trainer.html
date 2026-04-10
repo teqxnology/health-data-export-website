@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Heart Rate Trainer - Real-Time HR Zone Training for Android | Heart Rate Monitor App</title>
+    <meta name="title" content="Heart Rate Trainer - Real-Time HR Zone Training for Android | Heart Rate Monitor App">
+    <meta name="description" content="Professional heart rate zone training app for Android. Connect to Bluetooth heart rate monitors, track intervals, analyze workouts with zone-based metrics. Perfect for runners, cyclists, and HIIT athletes.">
+    <meta name="keywords" content="heart rate trainer, heart rate zone training, BLE heart rate monitor, interval training app, zone based training, HR monitor app, chest strap app, heart rate analysis, workout tracker, HIIT timer, cycling heart rate, running heart rate zones, Bluetooth heart rate monitor, heart rate recovery, chronotropic competence, tabata timer, 4x4 intervals">
+    <meta name="author" content="Health Data Export">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.healthdataexport.com/heart-rate-trainer.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.healthdataexport.com/heart-rate-trainer.html">
+    <meta property="og:title" content="Heart Rate Trainer - Zone-Based Training App for Android">
+    <meta property="og:description" content="Professional heart rate monitoring and zone-based training app. Connect to any Bluetooth heart rate monitor for real-time feedback and post-workout analysis.">
+    <meta property="og:image" content="https://www.healthdataexport.com/images/heart-rate-trainer-og.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.healthdataexport.com/heart-rate-trainer.html">
+    <meta property="twitter:title" content="Heart Rate Trainer - Zone-Based Training App">
+    <meta property="twitter:description" content="Professional HR zone training for runners, cyclists, and athletes. Real-time monitoring with Bluetooth heart rate monitors.">
+    <meta property="twitter:image" content="https://www.healthdataexport.com/images/heart-rate-trainer-twitter.png">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Heart Rate Trainer",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Professional heart rate zone training app for Android. Real-time BLE heart rate monitoring, structured interval workouts, and comprehensive post-workout analytics for runners, cyclists, and HIIT athletes.",
+      "featureList": [
+        "Real-time heart rate monitoring via Bluetooth Low Energy",
+        "Zone-based training with visual arc gauge",
+        "Pre-defined interval workouts (Tabata, 4x4, EMOM)",
+        "Custom workout builder",
+        "Post-workout analytics and trends",
+        "Heart rate recovery calculation",
+        "Chronotropic competence metrics",
+        "Zone distribution analysis",
+        "Export data to CSV",
+        "Local data storage with retention policies",
+        "Grafana-inspired dark UI",
+        "Haptic and sound zone alerts"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+                <span class="brand-name">Health Data Export</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="heart-rate-trainer.html" class="active">Heart Rate Trainer</a></li>
+                <li><a href="instructions.html">Instructions</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="index.html#download" class="btn-primary">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="product-hero">
+        <div class="hero-grid"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="product-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                    </svg>
+                    <span>Heart Rate Trainer</span>
+                </div>
+                <h1 class="hero-title">
+                    Train Smarter with
+                    <span class="gradient-text">Real-Time Heart Rate Zones</span>
+                </h1>
+                <p class="hero-description">
+                    Professional heart rate monitoring and zone-based training for Android. Connect to any Bluetooth heart rate monitor for real-time feedback, structured interval workouts, and comprehensive post-workout analytics.
+                </p>
+                <div class="hero-keywords">
+                    <span class="keyword-tag">Zone Training</span>
+                    <span class="keyword-tag">Bluetooth HR Monitor</span>
+                    <span class="keyword-tag">Interval Workouts</span>
+                    <span class="keyword-tag">Analytics</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn-hero">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"/>
+                        </svg>
+                        Download for Android
+                    </a>
+                    <a href="#features" class="btn-secondary">
+                        Explore Features
+                        <svg class="btn-icon-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="product-showcase">
+                    <div class="showcase-graphic">
+                        <!-- Placeholder for app screenshot or graphic -->
+                        <div class="hr-gauge-demo">
+                            <svg viewBox="0 0 200 200" class="gauge-svg">
+                                <!-- Zone arcs -->
+                                <path d="M 30,100 A 70,70 0 0,1 100,30" stroke="#3b82f6" stroke-width="20" fill="none" opacity="0.3"/>
+                                <path d="M 100,30 A 70,70 0 0,1 170,100" stroke="#22c55e" stroke-width="20" fill="none" opacity="0.3"/>
+                                <path d="M 170,100 A 70,70 0 0,1 140,160" stroke="#eab308" stroke-width="20" fill="none" opacity="0.3"/>
+                                <path d="M 140,160 A 70,70 0 0,1 60,160" stroke="#f97316" stroke-width="20" fill="none" opacity="0.3"/>
+                                <path d="M 60,160 A 70,70 0 0,1 30,100" stroke="#ef4444" stroke-width="20" fill="none" opacity="0.3"/>
+                                
+                                <!-- Active zone indicator -->
+                                <path d="M 100,30 A 70,70 0 0,1 170,100" stroke="#22c55e" stroke-width="22" fill="none" class="active-zone"/>
+                                
+                                <!-- Center BPM display -->
+                                <text x="100" y="95" text-anchor="middle" fill="#f9fafb" font-size="36" font-weight="700">145</text>
+                                <text x="100" y="115" text-anchor="middle" fill="#9ca3af" font-size="16">BPM</text>
+                            </svg>
+                            <div class="zone-label">Zone 3: Aerobic</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features for Serious Athletes</h2>
+            <p class="section-subtitle">Everything you need for zone-based training and workout analysis</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>Real-Time HR Monitoring</h3>
+                    <p>Large, glanceable BPM display with multi-zone arc gauge. Visual feedback shows your current zone instantly during workouts.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="1"/>
+                            <circle cx="12" cy="5" r="1"/>
+                            <circle cx="12" cy="19" r="1"/>
+                            <circle cx="5" cy="12" r="1"/>
+                            <circle cx="19" cy="12" r="1"/>
+                        </svg>
+                    </div>
+                    <h3>Bluetooth Heart Rate Monitors</h3>
+                    <p>Connects to any BLE heart rate monitor using standard Heart Rate Service. Works with chest straps, armbands, and watches.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    <h3>Structured Interval Workouts</h3>
+                    <p>Pre-defined protocols: Modified Tabata, 4x4 Intervals, Advanced EMOM. Create custom workouts with multiple steps and zones.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <h3>Zone-Based Training</h3>
+                    <p>Define your Max HR manually or calculate from age. Zones are color-coded throughout the app for instant visual feedback.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>Post-Workout Analytics</h3>
+                    <p>Comprehensive session analysis: HR charts, zone distribution, heart rate recovery, chronotropic competence, and long-term trends.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <h3>Export & Data Management</h3>
+                    <p>Export sessions to CSV. Configurable data retention. All data stored locally on your device with full control.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                    </div>
+                    <h3>Smart Zone Alerts</h3>
+                    <p>Haptic feedback and optional sound alerts when entering or exiting heart rate zones. Stay in your target zone effortlessly.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Advanced Metrics</h3>
+                    <p>Heart Rate Recovery (HRR), Chronotropic Competence, Work-to-Rest Ratio, and zone distribution for deeper training insights.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <rect x="7" y="7" width="3" height="9"/>
+                            <rect x="14" y="7" width="3" height="5"/>
+                        </svg>
+                    </div>
+                    <h3>Grafana-Style Dashboard</h3>
+                    <p>Dark theme with high contrast, color-coded metrics, and clean typography designed for glanceable workout information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-defined Workouts Showcase -->
+    <section class="workouts-showcase">
+        <div class="container">
+            <h2 class="section-title">Pre-Defined Interval Protocols</h2>
+            <p class="section-subtitle">Science-backed workouts ready to use with one tap</p>
+            
+            <div class="workout-cards">
+                <div class="workout-card">
+                    <div class="workout-header">
+                        <h3>Modified Tabata</h3>
+                        <span class="workout-duration">10-15 min</span>
+                    </div>
+                    <p class="workout-description">30 seconds vigorous work + 60 seconds slow recovery. Perfect for building anaerobic capacity with adequate recovery.</p>
+                    <div class="workout-zones">
+                        <span class="zone-badge zone-hard">Zone 4-5</span>
+                        <span class="zone-badge zone-easy">Zone 1-2</span>
+                    </div>
+                </div>
+                
+                <div class="workout-card">
+                    <div class="workout-header">
+                        <h3>4x4 Interval Protocol</h3>
+                        <span class="workout-duration">~32 min</span>
+                    </div>
+                    <p class="workout-description">4 minutes hard (85-95% max HR) + 3 minutes active recovery. Repeated 4 times. Gold standard for VO2 max improvement.</p>
+                    <div class="workout-zones">
+                        <span class="zone-badge zone-hard">Zone 4-5</span>
+                        <span class="zone-badge zone-moderate">Zone 2-3</span>
+                    </div>
+                </div>
+                
+                <div class="workout-card">
+                    <div class="workout-header">
+                        <h3>Advanced EMOM</h3>
+                        <span class="workout-duration">~20 min</span>
+                    </div>
+                    <p class="workout-description">6 minutes hard (90-95% max HR) + 1 minute active recovery. Extended high-intensity intervals for advanced athletes.</p>
+                    <div class="workout-zones">
+                        <span class="zone-badge zone-max">Zone 5</span>
+                        <span class="zone-badge zone-moderate">Zone 2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Preview -->
+    <section class="analytics-preview">
+        <div class="container">
+            <div class="analytics-content">
+                <div class="analytics-text">
+                    <h2 class="section-title">Comprehensive Post-Workout Analytics</h2>
+                    <p class="analytics-description">
+                        After your training session, dive deep into your performance with professional-grade metrics and visualizations.
+                    </p>
+                    
+                    <div class="analytics-features">
+                        <div class="analytics-feature-item">
+                            <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <div>
+                                <h4>Heart Rate Charts</h4>
+                                <p>Time-series visualization with color-coded zone backgrounds</p>
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-feature-item">
+                            <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <div>
+                                <h4>Zone Distribution</h4>
+                                <p>Time and percentage breakdown across all HR zones</p>
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-feature-item">
+                            <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <div>
+                                <h4>Heart Rate Recovery</h4>
+                                <p>HRR calculation across multiple time windows (30s/60s/120s)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-feature-item">
+                            <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <div>
+                                <h4>Chronotropic Competence</h4>
+                                <p>Rate of HR increase with reserve-based percentage metrics</p>
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-feature-item">
+                            <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <div>
+                                <h4>Work-to-Rest Ratio</h4>
+                                <p>Energy system profiling: time working vs. resting</p>
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-feature-item">
+                            <svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <div>
+                                <h4>Long-Term Trends</h4>
+                                <p>Compare sessions against 1 week to 1 year averages</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analytics-visual">
+                    <!-- Placeholder for analytics screenshot -->
+                    <div class="analytics-mockup">
+                        <div class="mockup-header">
+                            <span class="mockup-title">Session Analysis</span>
+                            <span class="mockup-date">Jan 15, 2024</span>
+                        </div>
+                        <div class="mockup-stats">
+                            <div class="stat-box">
+                                <div class="stat-label">Duration</div>
+                                <div class="stat-value">32:14</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">Avg HR</div>
+                                <div class="stat-value">152</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">Max HR</div>
+                                <div class="stat-value">178</div>
+                            </div>
+                        </div>
+                        <div class="mockup-chart">
+                            <svg viewBox="0 0 300 150" preserveAspectRatio="none">
+                                <polyline points="0,100 30,95 60,90 90,70 120,65 150,80 180,75 210,90 240,85 270,95 300,100" 
+                                          stroke="#a855f7" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Users -->
+    <section class="target-users">
+        <div class="container">
+            <h2 class="section-title">Perfect For Athletes & Fitness Enthusiasts</h2>
+            
+            <div class="user-types">
+                <div class="user-type-card">
+                    <div class="user-icon">🏃</div>
+                    <h3>Runners</h3>
+                    <p>Train at the right intensity for long runs, tempo work, and interval sessions. Monitor your aerobic development with zone-based feedback.</p>
+                </div>
+                
+                <div class="user-type-card">
+                    <div class="user-icon">🚴</div>
+                    <h3>Cyclists</h3>
+                    <p>Structured interval training for road cycling and mountain biking. Track your power-to-HR relationship and recovery metrics.</p>
+                </div>
+                
+                <div class="user-type-card">
+                    <div class="user-icon">🥊</div>
+                    <h3>HIIT Athletes</h3>
+                    <p>Perfect for high-intensity interval training, CrossFit, and circuit workouts. Real-time zone feedback keeps you in the optimal range.</p>
+                </div>
+                
+                <div class="user-type-card">
+                    <div class="user-icon">⛰️</div>
+                    <h3>Endurance Athletes</h3>
+                    <p>Trail runners, triathletes, and long-distance enthusiasts. Monitor cardiac drift and pacing during extended training sessions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="tech-specs">
+        <div class="container-narrow">
+            <h2 class="section-title">Technical Details</h2>
+            
+            <div class="specs-grid">
+                <div class="spec-category">
+                    <h3>Compatibility</h3>
+                    <ul>
+                        <li><strong>Platform:</strong> Android 8.0 (API 26) and above</li>
+                        <li><strong>Bluetooth:</strong> BLE 4.0+ required</li>
+                        <li><strong>Heart Rate Monitors:</strong> Any device with standard Heart Rate Service (0x180D)</li>
+                        <li><strong>Supported Devices:</strong> Polar H10, Garmin HRM-Pro, Wahoo TICKR, and all BLE chest straps</li>
+                    </ul>
+                </div>
+                
+                <div class="spec-category">
+                    <h3>Data & Privacy</h3>
+                    <ul>
+                        <li><strong>Storage:</strong> All data stored locally on device</li>
+                        <li><strong>Export:</strong> CSV format with custom date ranges</li>
+                        <li><strong>Retention:</strong> Configurable (7 days to Forever)</li>
+                        <li><strong>Privacy:</strong> No cloud sync, no third-party data sharing</li>
+                    </ul>
+                </div>
+                
+                <div class="spec-category">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><strong>Recording Modes:</strong> Manual toggle and auto-start with workouts</li>
+                        <li><strong>Workout Types:</strong> Pre-defined + custom interval workouts</li>
+                        <li><strong>Alerts:</strong> Haptic and sound notifications for zone changes</li>
+                        <li><strong>UI Theme:</strong> Grafana-inspired dark mode</li>
+                    </ul>
+                </div>
+                
+                <div class="spec-category">
+                    <h3>Advanced Metrics</h3>
+                    <ul>
+                        <li><strong>Heart Rate Recovery:</strong> Multi-window HRR calculation</li>
+                        <li><strong>Chronotropic Competence:</strong> Rate of increase + reserve %</li>
+                        <li><strong>Zone Analysis:</strong> Time and % distribution across zones</li>
+                        <li><strong>Trends:</strong> Session comparison over 1 week to 1 year</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container-narrow">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What heart rate monitors are compatible?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Heart Rate Trainer works with any Bluetooth Low Energy (BLE) heart rate monitor that uses the standard Heart Rate Service (UUID 0x180D). This includes all major brands: Polar (H10, H9), Garmin (HRM-Pro, HRM-Dual), Wahoo (TICKR, TICKR X), and generic BLE chest straps and armbands.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I use this without a chest strap?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The app requires a Bluetooth heart rate monitor for live BPM tracking. However, you can use any BLE-compatible device including chest straps, arm bands (like Polar Verity Sense, Wahoo TICKR Fit), or smartwatches that broadcast heart rate data via Bluetooth.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I set up my heart rate zones?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can set your Max Heart Rate manually based on a recent test, or use the age-based calculation (220 - age). The app automatically calculates 5 zones as percentages of your Max HR. You can adjust your Max HR anytime in Settings or from the Monitor screen.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I create custom workouts?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! In addition to the three pre-defined interval protocols (Modified Tabata, 4x4, Advanced EMOM), you can create custom workouts with multiple steps. Each step can have a custom name, duration, and target heart rate zone.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is my data stored in the cloud?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. All data is stored locally on your Android device using a local database. Your heart rate recordings, workouts, and settings never leave your phone unless you explicitly export them via the CSV export feature.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I export my training data?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! You can export your heart rate data to CSV format for any time range: latest session, last 24 hours, or all recorded data. The exported file can be shared via email, cloud storage, or any app that accepts files.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is Heart Rate Recovery (HRR)?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Heart Rate Recovery measures how quickly your heart rate drops after intense exercise. The app calculates your best HRR drop across multiple time windows (30s, 60s, 120s) and focuses on true recovery phases. Better HRR indicates improved cardiovascular fitness.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is Chronotropic Competence?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Chronotropic Competence measures how effectively your heart rate responds to exercise. The app calculates your best rate of HR increase and provides a reserve-based percentage. This metric helps assess cardiovascular health and training adaptations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Does the app work offline?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Heart Rate Trainer works completely offline. You only need Bluetooth connectivity to your heart rate monitor. No internet connection is required for monitoring, recording, or analyzing your workouts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="download">
+        <div class="container">
+            <h2 class="cta-title">Ready to Transform Your Training?</h2>
+            <p class="cta-description">Download Heart Rate Trainer and start your zone-based training journey today.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn-cta">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"/>
+                    </svg>
+                    <div>
+                        <div class="btn-label">Download for Android</div>
+                        <div class="btn-sublabel">Free on Google Play</div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="compatibility-note">
+                <p>✓ Works with all Bluetooth heart rate monitors</p>
+                <p>✓ Requires Android 8.0 or higher</p>
+                <p>✓ Free with no ads or subscriptions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Apps Section -->
+    <section class="related-apps">
+        <div class="container">
+            <h2 class="section-title">Explore Our Other Apps</h2>
+            
+            <div class="app-cards">
+                <div class="app-card">
+                    <div class="app-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>Health Data Export</h3>
+                    <p>Export health and fitness data from Apple Health, Google Fit, Health Connect, and all wearables to CSV, JSON, PDF, or Excel.</p>
+                    <a href="index.html" class="app-link">
+                        Learn More →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                    </svg>
+                    <span class="brand-name">Health Data Export</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Health Data Export</a>
+                    <a href="heart-rate-trainer.html">Heart Rate Trainer</a>
+                    <a href="instructions.html">Instructions</a>
+                    <a href="blog/index.html">Blog</a>
+                    <a href="press.html">Press Kit</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Health Data Export. All rights reserved.</p>
+                <p class="footer-keywords">Heart rate training • Zone-based training • BLE heart rate monitor • Interval training • HIIT timer • Workout analytics</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
