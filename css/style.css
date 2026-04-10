@@ -1687,3 +1687,561 @@ html {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* ===================================
+   Heart Rate Trainer Product Page
+   =================================== */
+
+/* Product Hero */
+.product-hero {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--bg-dark);
+}
+
+.product-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid var(--border-purple);
+    color: var(--primary-purple);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.product-badge svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Product Showcase */
+.product-showcase {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+
+.showcase-graphic {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.hr-gauge-demo {
+    background: var(--bg-card);
+    border: 1px solid var(--border-purple);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
+    animation: float 6s ease-in-out infinite;
+}
+
+.gauge-svg {
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--spacing-md);
+}
+
+.active-zone {
+    filter: drop-shadow(0 0 8px #22c55e);
+    animation: pulse-zone 2s ease-in-out infinite;
+}
+
+@keyframes pulse-zone {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.zone-label {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #22c55e;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Workouts Showcase */
+.workouts-showcase {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-darker);
+}
+
+.workout-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.workout-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-purple);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    transition: all 0.3s ease;
+}
+
+.workout-card:hover {
+    border-left-color: var(--accent-pink);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(168, 85, 247, 0.2);
+}
+
+.workout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.workout-header h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.workout-duration {
+    background: rgba(168, 85, 247, 0.2);
+    color: var(--primary-purple);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.workout-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.workout-zones {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+.zone-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.zone-easy {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.zone-moderate {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.zone-hard {
+    background: rgba(249, 115, 22, 0.2);
+    color: #f97316;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.zone-max {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Analytics Preview */
+.analytics-preview {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-dark);
+}
+
+.analytics-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+}
+
+.analytics-description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.7;
+}
+
+.analytics-features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.analytics-feature-item {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.feature-check {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--primary-purple);
+    margin-top: 2px;
+}
+
+.analytics-feature-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+}
+
+.analytics-feature-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Analytics Mockup */
+.analytics-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.analytics-mockup {
+    background: var(--bg-card);
+    border: 1px solid var(--border-purple);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 60px rgba(168, 85, 247, 0.2);
+}
+
+.mockup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mockup-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.mockup-date {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.mockup-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.stat-box {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: var(--bg-card-hover);
+    border-radius: var(--radius-md);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: var(--gradient-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.mockup-chart {
+    height: 150px;
+    background: var(--bg-darker);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+}
+
+.mockup-chart svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Target Users */
+.target-users {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-darker);
+}
+
+.user-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.user-type-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.user-type-card:hover {
+    border-color: var(--primary-purple);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(168, 85, 247, 0.2);
+}
+
+.user-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.user-type-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.user-type-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Technical Specs */
+.tech-specs {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-dark);
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.spec-category {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+}
+
+.spec-category h3 {
+    font-size: 1.35rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-purple);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--border-purple);
+}
+
+.spec-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.spec-category li {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.spec-category li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--primary-purple);
+    font-weight: bold;
+}
+
+.spec-category strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* FAQ Section for Product Page */
+.faq-section {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-darker);
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* Compatibility Note */
+.compatibility-note {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.compatibility-note p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: var(--spacing-xs) 0;
+}
+
+/* Related Apps */
+.related-apps {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-dark);
+}
+
+.app-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.app-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    transition: all 0.3s ease;
+}
+
+.app-card:hover {
+    border-color: var(--primary-purple);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(168, 85, 247, 0.2);
+}
+
+.app-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--gradient-purple);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.app-icon svg {
+    width: 32px;
+    height: 32px;
+    color: white;
+}
+
+.app-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+.app-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.app-link {
+    color: var(--primary-purple);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.app-link:hover {
+    color: var(--light-purple);
+    gap: var(--spacing-sm);
+}
+
+/* Responsive Design for Product Page */
+@media (max-width: 1024px) {
+    .analytics-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .analytics-visual {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-hero {
+        min-height: auto;
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-showcase {
+        height: 400px;
+        margin-top: var(--spacing-xl);
+    }
+    
+    .workout-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .user-types {
+        grid-template-columns: 1fr;
+    }
+    
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mockup-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-badge {
+        font-size: 0.875rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .hr-gauge-demo {
+        padding: var(--spacing-lg);
+    }
+    
+    .analytics-mockup {
+        padding: var(--spacing-md);
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+}
