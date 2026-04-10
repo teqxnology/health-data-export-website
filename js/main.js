@@ -331,3 +331,83 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Health Data Export website initialized successfully! 🚀');
 });
+
+// ===================================
+// Mobile Menu Toggle
+// ===================================
+
+// Create mobile menu button
+const createMobileMenuButton = () => {
+    const navbar = document.querySelector('.navbar .container');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (!navbar || !navMenu) return;
+    
+    // Check if button already exists
+    if (document.querySelector('.mobile-menu-toggle')) return;
+    
+    // Create hamburger button
+    const menuButton = document.createElement('button');
+    menuButton.className = 'mobile-menu-toggle';
+    menuButton.setAttribute('aria-label', 'Toggle menu');
+    menuButton.innerHTML = `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+    `;
+    
+    // Insert button before nav menu
+    navMenu.parentNode.insertBefore(menuButton, navMenu);
+    
+    // Toggle menu on click
+    menuButton.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuButton.classList.toggle('active');
+        
+        // Change icon when active
+        if (menuButton.classList.contains('active')) {
+            menuButton.innerHTML = `
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            `;
+        } else {
+            menuButton.innerHTML = `
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            `;
+        }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navbar.contains(e.target) && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            menuButton.classList.remove('active');
+            menuButton.innerHTML = `
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            `;
+        }
+    });
+};
+
+// Initialize mobile menu
+if (window.innerWidth <= 768) {
+    createMobileMenuButton();
+}
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 768) {
+        createMobileMenuButton();
+    }
+});
